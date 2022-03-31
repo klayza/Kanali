@@ -22,6 +22,7 @@ namespace Kanali
         {
             // Will run python scripts
             // Change button red, and turn text to stop
+
         }
 
         private void buttonConfig_Click(object sender, EventArgs e)
@@ -50,6 +51,9 @@ namespace Kanali
         private void buttonLibrary_Click(object sender, EventArgs e)
         {
             // Opens library (picture viewer)
+            LibraryGUI libraryGUI = new LibraryGUI();
+            libraryGUI.Show();
+            this.Hide();
         }
     }
 }

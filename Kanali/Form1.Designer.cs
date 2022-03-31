@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFormGUI));
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonConfig = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             // 
             // buttonStart
             // 
+            this.buttonStart.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStart.Location = new System.Drawing.Point(413, 172);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(177, 41);
@@ -48,6 +50,7 @@
             // 
             // buttonConfig
             // 
+            this.buttonConfig.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConfig.Location = new System.Drawing.Point(413, 265);
             this.buttonConfig.Name = "buttonConfig";
             this.buttonConfig.Size = new System.Drawing.Size(177, 41);
@@ -58,6 +61,7 @@
             // 
             // buttonSettings
             // 
+            this.buttonSettings.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSettings.Location = new System.Drawing.Point(413, 359);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(177, 41);
@@ -68,6 +72,7 @@
             // 
             // buttonLog
             // 
+            this.buttonLog.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLog.Location = new System.Drawing.Point(413, 312);
             this.buttonLog.Name = "buttonLog";
             this.buttonLog.Size = new System.Drawing.Size(177, 41);
@@ -78,6 +83,7 @@
             // 
             // buttonExit
             // 
+            this.buttonExit.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.Location = new System.Drawing.Point(413, 406);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(177, 41);
@@ -88,6 +94,7 @@
             // 
             // buttonLibrary
             // 
+            this.buttonLibrary.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLibrary.Location = new System.Drawing.Point(413, 219);
             this.buttonLibrary.Name = "buttonLibrary";
             this.buttonLibrary.Size = new System.Drawing.Size(177, 41);
@@ -100,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1007, 597);
             this.Controls.Add(this.buttonLibrary);
             this.Controls.Add(this.buttonExit);
