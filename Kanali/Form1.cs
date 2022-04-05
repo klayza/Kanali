@@ -40,7 +40,8 @@ namespace Kanali
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
-            // Settings
+            SettingsGUI settingsgui = new SettingsGUI();
+            settingsgui.Show();
         }
 
         private void buttonLog_Click(object sender, EventArgs e)
