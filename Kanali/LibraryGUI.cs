@@ -13,8 +13,8 @@ namespace Kanali
 {
     public partial class LibraryGUI : Form
     {
-        //String path = "C:/Users/clayj/Pictures";
-        String path = "D:/Media/4Chan";
+        String path = "C:/Users/cwieb255/Desktop";
+        //String path = "D:/Media/4Chan";
         String[] Images;
         int Images_Index = 0;
 

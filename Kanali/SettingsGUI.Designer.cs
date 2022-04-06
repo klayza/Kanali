@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDownloadDirectory = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.checkBoxMediaScrolling = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSaveAndExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.buttonChooseFolder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxDownloadDirectory
             // 
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(16, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(462, 36);
-            this.textBox1.TabIndex = 2;
+            this.textBoxDownloadDirectory.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDownloadDirectory.Location = new System.Drawing.Point(16, 51);
+            this.textBoxDownloadDirectory.Name = "textBoxDownloadDirectory";
+            this.textBoxDownloadDirectory.Size = new System.Drawing.Size(462, 36);
+            this.textBoxDownloadDirectory.TabIndex = 2;
             // 
             // label1
             // 
@@ -59,10 +60,11 @@
             // 
             // checkBoxMediaScrolling
             // 
+            this.checkBoxMediaScrolling.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F);
             this.checkBoxMediaScrolling.ForeColor = System.Drawing.Color.White;
             this.checkBoxMediaScrolling.Location = new System.Drawing.Point(16, 140);
             this.checkBoxMediaScrolling.Name = "checkBoxMediaScrolling";
-            this.checkBoxMediaScrolling.Size = new System.Drawing.Size(88, 20);
+            this.checkBoxMediaScrolling.Size = new System.Drawing.Size(103, 30);
             this.checkBoxMediaScrolling.TabIndex = 0;
             this.checkBoxMediaScrolling.Text = "True";
             this.checkBoxMediaScrolling.UseVisualStyleBackColor = true;
@@ -87,6 +89,7 @@
             this.buttonSaveAndExit.TabIndex = 5;
             this.buttonSaveAndExit.Text = "Save and Exit";
             this.buttonSaveAndExit.UseVisualStyleBackColor = true;
+            this.buttonSaveAndExit.Click += new System.EventHandler(this.buttonSaveAndExit_Click);
             // 
             // panel1
             // 
@@ -97,14 +100,25 @@
             this.panel1.Size = new System.Drawing.Size(601, 42);
             this.panel1.TabIndex = 6;
             // 
+            // buttonChooseFolder
+            // 
+            this.buttonChooseFolder.Location = new System.Drawing.Point(256, 22);
+            this.buttonChooseFolder.Name = "buttonChooseFolder";
+            this.buttonChooseFolder.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseFolder.TabIndex = 7;
+            this.buttonChooseFolder.Text = "Browse";
+            this.buttonChooseFolder.UseVisualStyleBackColor = true;
+            this.buttonChooseFolder.Click += new System.EventHandler(this.buttonChooseFolder_Click);
+            // 
             // SettingsGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(42)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(596, 444);
+            this.Controls.Add(this.buttonChooseFolder);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxDownloadDirectory);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBoxMediaScrolling);
@@ -119,12 +133,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDownloadDirectory;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.CheckBox checkBoxMediaScrolling;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSaveAndExit;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button buttonChooseFolder;
     }
 }

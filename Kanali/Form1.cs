@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Kanali
 {
@@ -55,6 +56,11 @@ namespace Kanali
             LibraryGUI libraryGUI = new LibraryGUI();
             libraryGUI.Show();
             this.Hide();
+        }
+
+        private void mediaScrolling()
+        {
+            // TODO
         }
     }
 }

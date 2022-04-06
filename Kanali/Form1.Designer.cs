@@ -39,6 +39,8 @@
             // 
             // buttonStart
             // 
+            this.buttonStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStart.AutoSize = true;
             this.buttonStart.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStart.Location = new System.Drawing.Point(413, 172);
             this.buttonStart.Name = "buttonStart";
@@ -50,6 +52,8 @@
             // 
             // buttonConfig
             // 
+            this.buttonConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonConfig.AutoSize = true;
             this.buttonConfig.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConfig.Location = new System.Drawing.Point(413, 265);
             this.buttonConfig.Name = "buttonConfig";
@@ -61,6 +65,8 @@
             // 
             // buttonSettings
             // 
+            this.buttonSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSettings.AutoSize = true;
             this.buttonSettings.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSettings.Location = new System.Drawing.Point(413, 359);
             this.buttonSettings.Name = "buttonSettings";
@@ -72,6 +78,8 @@
             // 
             // buttonLog
             // 
+            this.buttonLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLog.AutoSize = true;
             this.buttonLog.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLog.Location = new System.Drawing.Point(413, 312);
             this.buttonLog.Name = "buttonLog";
@@ -83,6 +91,8 @@
             // 
             // buttonExit
             // 
+            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExit.AutoSize = true;
             this.buttonExit.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.Location = new System.Drawing.Point(413, 406);
             this.buttonExit.Name = "buttonExit";
@@ -94,6 +104,8 @@
             // 
             // buttonLibrary
             // 
+            this.buttonLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLibrary.AutoSize = true;
             this.buttonLibrary.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLibrary.Location = new System.Drawing.Point(413, 219);
             this.buttonLibrary.Name = "buttonLibrary";
@@ -107,6 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1007, 597);
             this.Controls.Add(this.buttonLibrary);
@@ -118,6 +131,7 @@
             this.Name = "MainFormGUI";
             this.Text = "Kanali";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
