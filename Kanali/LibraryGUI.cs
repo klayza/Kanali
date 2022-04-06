@@ -13,8 +13,8 @@ namespace Kanali
 {
     public partial class LibraryGUI : Form
     {
-        String path = "C:/Users/cwieb255/desktop/Tree";
-        Bitmap image = new Bitmap("C:/Users/cwieb255/pictures/guibg.jpg");
+        //String path = "C:/Users/clayj/Pictures";
+        String path = "D:/Media/4Chan";
         String[] Images;
         int Images_Index = 0;
 
@@ -23,7 +23,7 @@ namespace Kanali
             InitializeComponent();
 
             // Appends all files via recursion to Images array
-            Images = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
+            Images = getImages(path);
 
             // Sets first image to the picturebox
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
@@ -36,8 +36,12 @@ namespace Kanali
             {
                 Images_Index = Images.Length - 1;
             }
+            else
+            {
+                Images_Index--;
+            }
             displayImageIndex();
-            Images_Index--;
+            changeTitle(Images[Images_Index]);
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
         }
 
@@ -47,8 +51,12 @@ namespace Kanali
             {
                 Images_Index = 0;
             }
-            Images_Index++;
+            else
+            {
+                Images_Index++;
+            }
             displayImageIndex();
+            changeTitle(Images[Images_Index]);
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
         }
 
@@ -78,6 +86,39 @@ namespace Kanali
             }
             pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
+        }
+
+        private String[] getImages(String path)
+        {
+            List<String> _images = new List<String>();
+            String[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                String extension = files[i].Substring(files[i].Length - 4);
+                if (extension == ".jpg" || extension == ".png")
+                {
+                    _images.Add(files[i]);
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return _images.ToArray();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            MainFormGUI mainFormGUI = new MainFormGUI();
+            mainFormGUI.Show();
+            this.Close();
+        }
+
+        private void changeTitle(String name)
+        {
+            this.Text = name;
+            this.Update();
         }
     }
 }

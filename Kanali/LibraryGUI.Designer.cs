@@ -30,17 +30,21 @@
         {
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonZoomToFit = new System.Windows.Forms.Button();
+            this.labelImageIndex = new System.Windows.Forms.Label();
             this.buttonFill = new System.Windows.Forms.Button();
             this.buttonForwardImage = new System.Windows.Forms.Button();
             this.buttonBackImage = new System.Windows.Forms.Button();
-            this.labelImageIndex = new System.Windows.Forms.Label();
-            this.buttonZoomToFit = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxImage
             // 
+            this.pictureBoxImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxImage.Location = new System.Drawing.Point(12, 43);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(783, 417);
@@ -49,6 +53,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.buttonExit);
             this.panel1.Controls.Add(this.buttonZoomToFit);
             this.panel1.Controls.Add(this.labelImageIndex);
             this.panel1.Controls.Add(this.buttonFill);
@@ -58,6 +65,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(783, 33);
             this.panel1.TabIndex = 1;
+            // 
+            // buttonZoomToFit
+            // 
+            this.buttonZoomToFit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZoomToFit.Location = new System.Drawing.Point(250, 5);
+            this.buttonZoomToFit.Name = "buttonZoomToFit";
+            this.buttonZoomToFit.Size = new System.Drawing.Size(75, 23);
+            this.buttonZoomToFit.TabIndex = 5;
+            this.buttonZoomToFit.Text = "Fit";
+            this.buttonZoomToFit.UseVisualStyleBackColor = true;
+            this.buttonZoomToFit.Click += new System.EventHandler(this.buttonZoomToFit_Click);
+            // 
+            // labelImageIndex
+            // 
+            this.labelImageIndex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelImageIndex.AutoSize = true;
+            this.labelImageIndex.Location = new System.Drawing.Point(622, 8);
+            this.labelImageIndex.Name = "labelImageIndex";
+            this.labelImageIndex.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.labelImageIndex.Size = new System.Drawing.Size(20, 17);
+            this.labelImageIndex.TabIndex = 4;
             // 
             // buttonFill
             // 
@@ -92,28 +121,21 @@
             this.buttonBackImage.UseVisualStyleBackColor = true;
             this.buttonBackImage.Click += new System.EventHandler(this.buttonBackImage_Click);
             // 
-            // labelImageIndex
+            // buttonExit
             // 
-            this.labelImageIndex.AutoSize = true;
-            this.labelImageIndex.Location = new System.Drawing.Point(736, 10);
-            this.labelImageIndex.Name = "labelImageIndex";
-            this.labelImageIndex.Size = new System.Drawing.Size(0, 13);
-            this.labelImageIndex.TabIndex = 4;
-            // 
-            // buttonZoomToFit
-            // 
-            this.buttonZoomToFit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonZoomToFit.Location = new System.Drawing.Point(250, 5);
-            this.buttonZoomToFit.Name = "buttonZoomToFit";
-            this.buttonZoomToFit.Size = new System.Drawing.Size(75, 23);
-            this.buttonZoomToFit.TabIndex = 5;
-            this.buttonZoomToFit.Text = "Fit";
-            this.buttonZoomToFit.UseVisualStyleBackColor = true;
-            this.buttonZoomToFit.Click += new System.EventHandler(this.buttonZoomToFit_Click);
+            this.buttonExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonExit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Location = new System.Drawing.Point(695, 5);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 6;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // LibraryGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 472);
             this.Controls.Add(this.panel1);
@@ -137,5 +159,6 @@
         private System.Windows.Forms.Button buttonFill;
         private System.Windows.Forms.Label labelImageIndex;
         private System.Windows.Forms.Button buttonZoomToFit;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
