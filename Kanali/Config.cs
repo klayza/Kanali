@@ -13,7 +13,17 @@ namespace Kanali
     {
         public String download_path { get; set; }
         public Boolean media_scrolling { get; set; }
+        public Boolean can_download { get; set; }
+        public Boolean initialized = false;
         String filename = "Preferences.json";
+        public Config()
+        {
+            if (File.Exists(filename))
+            {
+                this.initialized = true;
+            }
+
+        }
 
         // Writes over existing json, makes new instance
         public void createJson(Config cf)
@@ -27,7 +37,6 @@ namespace Kanali
         // Returns the contents of Preferences.json as a type Config 
         public Config getJson()
         {
-            Console.WriteLine(JsonSerializer.Deserialize<Config>(File.ReadAllText(filename)).download_path);
             return JsonSerializer.Deserialize<Config>(File.ReadAllText(filename));
         }
 

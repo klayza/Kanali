@@ -12,15 +12,20 @@ namespace Kanali
 {
     public partial class SettingsGUI : Form
     {
+        String path;
         public SettingsGUI()
         {
             InitializeComponent();
 
-            // Sets the widgets to their values retrieved from getJson() in Config class
-            Config pre = new Config();
-            Config config = pre.getJson();
-            textBoxDownloadDirectory.Text = config.download_path;
-            checkBoxMediaScrolling.Checked = config.media_scrolling;
+            Config cf = new Config();
+            if (cf.initialized)
+            {
+                Config json = cf.getJson();
+
+                // Sets the widgets to their values retrieved from getJson() in Config class
+                textBoxDownloadDirectory.Text = json.download_path;
+                checkBoxMediaScrolling.Checked = json.media_scrolling;
+            }
         }
 
         private void buttonSaveAndExit_Click(object sender, EventArgs e)

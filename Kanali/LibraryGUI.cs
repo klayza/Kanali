@@ -13,8 +13,7 @@ namespace Kanali
 {
     public partial class LibraryGUI : Form
     {
-        String path = "C:/Users/cwieb255/Desktop";
-        //String path = "D:/Media/4Chan";
+        String path;
         String[] Images;
         int Images_Index = 0;
 
@@ -22,12 +21,33 @@ namespace Kanali
         {
             InitializeComponent();
 
+            this.ActiveControl = labelImageIndex;
+
+            // Events for keypresses
+            labelImageIndex.KeyDown += LibraryGUI_KeyDown;
+
+            Config pre = new Config();
+            Config cf = pre.getJson();
+            path = cf.download_path;
+
             // Appends all files via recursion to Images array
             Images = getImages(path);
 
             // Sets first image to the picturebox
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
             displayImageIndex();
+        }
+
+        private void LibraryGUI_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+            {
+                buttonBackImage.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D)
+            {
+                buttonForwardImage.PerformClick();
+            }
         }
 
         private void buttonBackImage_Click(object sender, EventArgs e)
@@ -86,6 +106,7 @@ namespace Kanali
             }
             pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
+            
         }
 
         private String[] getImages(String path)
@@ -120,5 +141,7 @@ namespace Kanali
             this.Text = name;
             this.Update();
         }
+
+        
     }
 }

@@ -30,12 +30,12 @@
         {
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.buttonZoomToFit = new System.Windows.Forms.Button();
             this.labelImageIndex = new System.Windows.Forms.Label();
             this.buttonFill = new System.Windows.Forms.Button();
             this.buttonForwardImage = new System.Windows.Forms.Button();
             this.buttonBackImage = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,19 @@
             this.panel1.Size = new System.Drawing.Size(783, 33);
             this.panel1.TabIndex = 1;
             // 
+            // buttonExit
+            // 
+            this.buttonExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonExit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Location = new System.Drawing.Point(695, 5);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 6;
+            this.buttonExit.TabStop = false;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // buttonZoomToFit
             // 
             this.buttonZoomToFit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,6 +86,7 @@
             this.buttonZoomToFit.Name = "buttonZoomToFit";
             this.buttonZoomToFit.Size = new System.Drawing.Size(75, 23);
             this.buttonZoomToFit.TabIndex = 5;
+            this.buttonZoomToFit.TabStop = false;
             this.buttonZoomToFit.Text = "Fit";
             this.buttonZoomToFit.UseVisualStyleBackColor = true;
             this.buttonZoomToFit.Click += new System.EventHandler(this.buttonZoomToFit_Click);
@@ -95,6 +109,7 @@
             this.buttonFill.Name = "buttonFill";
             this.buttonFill.Size = new System.Drawing.Size(75, 23);
             this.buttonFill.TabIndex = 2;
+            this.buttonFill.TabStop = false;
             this.buttonFill.Text = "Stretch";
             this.buttonFill.UseVisualStyleBackColor = true;
             this.buttonFill.Click += new System.EventHandler(this.buttonFill_Click);
@@ -106,6 +121,7 @@
             this.buttonForwardImage.Name = "buttonForwardImage";
             this.buttonForwardImage.Size = new System.Drawing.Size(75, 23);
             this.buttonForwardImage.TabIndex = 1;
+            this.buttonForwardImage.TabStop = false;
             this.buttonForwardImage.Text = "-->";
             this.buttonForwardImage.UseVisualStyleBackColor = true;
             this.buttonForwardImage.Click += new System.EventHandler(this.buttonForwardImage_Click);
@@ -117,21 +133,10 @@
             this.buttonBackImage.Name = "buttonBackImage";
             this.buttonBackImage.Size = new System.Drawing.Size(75, 23);
             this.buttonBackImage.TabIndex = 0;
+            this.buttonBackImage.TabStop = false;
             this.buttonBackImage.Text = "<--";
             this.buttonBackImage.UseVisualStyleBackColor = true;
             this.buttonBackImage.Click += new System.EventHandler(this.buttonBackImage_Click);
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonExit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(695, 5);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(75, 23);
-            this.buttonExit.TabIndex = 6;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // LibraryGUI
             // 
