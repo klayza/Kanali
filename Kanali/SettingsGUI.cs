@@ -17,10 +17,10 @@ namespace Kanali
         {
             InitializeComponent();
 
-            Config cf = new Config();
-            if (cf.initialized)
+            User usr = new User();
+            if (usr.initialized)
             {
-                Config json = cf.getJson();
+                User json = usr.getJson();
 
                 // Sets the widgets to their values retrieved from getJson() in Config class
                 textBoxDownloadDirectory.Text = json.download_path;
@@ -30,7 +30,7 @@ namespace Kanali
 
         private void buttonSaveAndExit_Click(object sender, EventArgs e)
         {
-            Config config = new Config();
+            User usr = new User();
             // Check if the user entered anything
             if (textBoxDownloadDirectory.Text == "")
             {
@@ -39,9 +39,9 @@ namespace Kanali
             }
 
             // Retrieves the values from widgets then creates a new Preferences.json file with those values
-            config.download_path = textBoxDownloadDirectory.Text;
-            config.media_scrolling = checkBoxMediaScrolling.Checked;
-            config.createJson(config);
+            usr.download_path = textBoxDownloadDirectory.Text;
+            usr.media_scrolling = checkBoxMediaScrolling.Checked;
+            usr.createJson(usr);
             this.Hide();
         }
 

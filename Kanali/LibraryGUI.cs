@@ -26,9 +26,8 @@ namespace Kanali
             // Events for keypresses
             labelImageIndex.KeyDown += LibraryGUI_KeyDown;
 
-            Config pre = new Config();
-            Config cf = pre.getJson();
-            path = cf.download_path;
+            User usr = new User();
+            path = usr.getJson().download_path;
 
             // Appends all files via recursion to Images array
             Images = getImages(path);
@@ -112,6 +111,7 @@ namespace Kanali
         private String[] getImages(String path)
         {
             List<String> _images = new List<String>();
+
             String[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
 
             for (int i = 0; i < files.Length; i++)

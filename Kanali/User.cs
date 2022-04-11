@@ -9,14 +9,14 @@ using System.Text.Json;
 namespace Kanali
 {
     // Contains the settings the user will define in the settings tab
-    public class Config
+    public class User
     {
         public String download_path { get; set; }
         public Boolean media_scrolling { get; set; }
         public Boolean can_download { get; set; }
         public Boolean initialized = false;
         String filename = "Preferences.json";
-        public Config()
+        public User()
         {
             if (File.Exists(filename))
             {
@@ -26,18 +26,33 @@ namespace Kanali
         }
 
         // Writes over existing json, makes new instance
-        public void createJson(Config cf)
+        public void createJson(User usr)
         {
-            String jsonString = JsonSerializer.Serialize(cf);
+            String jsonString = JsonSerializer.Serialize(usr);
             File.WriteAllText(filename, jsonString);
 
             Console.WriteLine(File.ReadAllText(filename));
         }
 
         // Returns the contents of Preferences.json as a type Config 
-        public Config getJson()
+        public User getJson()
         {
-            return JsonSerializer.Deserialize<Config>(File.ReadAllText(filename));
+            return JsonSerializer.Deserialize<User>(File.ReadAllText(filename));
+        }
+
+        public String canProceed(String form)
+        {
+            switch (form)
+            {
+                case "LIBRARY":
+                    User user = new User();
+                    if (!Directory.Exists(user.getJson().download_path))
+                    {
+                        return "Image folder not found, check path";
+                    }
+                default:
+                    return "Nothing";
+            }
         }
 
     }

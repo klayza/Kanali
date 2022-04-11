@@ -82,7 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="ConfigGUI.cs">
       <SubType>Form</SubType>
     </Compile>
