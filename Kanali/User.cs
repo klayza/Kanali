@@ -44,12 +44,22 @@ namespace Kanali
         {
             switch (form)
             {
+                // NEEDS: *Image directory path
                 case "LIBRARY":
                     User user = new User();
                     if (!Directory.Exists(user.getJson().download_path))
                     {
                         return "Image folder not found, check path";
                     }
+                    else { return "Nothing"; }
+
+                // NEEDS: *Preferences.json file created
+                case "SETTINGS":
+                    if (!File.Exists(filename))
+                    {
+                        return "Nothing";
+                    }
+                    return "Nothing";
                 default:
                     return "Nothing";
             }
