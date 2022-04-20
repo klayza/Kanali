@@ -142,6 +142,10 @@ namespace Kanali
             this.Update();
         }
 
-        
+        private void buttonShuffle_Click(object sender, EventArgs e)
+        {
+            var rnd = new Random();
+            Images = Images.OrderBy(item => rnd.Next()).ToArray();
+        }
     }
 }

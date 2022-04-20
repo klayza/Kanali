@@ -36,6 +36,7 @@
             this.buttonFill = new System.Windows.Forms.Button();
             this.buttonForwardImage = new System.Windows.Forms.Button();
             this.buttonBackImage = new System.Windows.Forms.Button();
+            this.buttonShuffle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.buttonShuffle);
             this.panel1.Controls.Add(this.buttonExit);
             this.panel1.Controls.Add(this.buttonZoomToFit);
             this.panel1.Controls.Add(this.labelImageIndex);
@@ -96,11 +98,12 @@
             this.labelImageIndex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelImageIndex.AutoSize = true;
-            this.labelImageIndex.Location = new System.Drawing.Point(622, 8);
+            this.labelImageIndex.Location = new System.Drawing.Point(620, 10);
             this.labelImageIndex.Name = "labelImageIndex";
             this.labelImageIndex.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.labelImageIndex.Size = new System.Drawing.Size(20, 17);
+            this.labelImageIndex.Size = new System.Drawing.Size(57, 13);
             this.labelImageIndex.TabIndex = 4;
+            this.labelImageIndex.Text = "Index";
             // 
             // buttonFill
             // 
@@ -138,9 +141,21 @@
             this.buttonBackImage.UseVisualStyleBackColor = true;
             this.buttonBackImage.Click += new System.EventHandler(this.buttonBackImage_Click);
             // 
+            // buttonShuffle
+            // 
+            this.buttonShuffle.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShuffle.Location = new System.Drawing.Point(331, 5);
+            this.buttonShuffle.Name = "buttonShuffle";
+            this.buttonShuffle.Size = new System.Drawing.Size(75, 23);
+            this.buttonShuffle.TabIndex = 7;
+            this.buttonShuffle.TabStop = false;
+            this.buttonShuffle.Text = "Shuffle";
+            this.buttonShuffle.UseVisualStyleBackColor = true;
+            this.buttonShuffle.Click += new System.EventHandler(this.buttonShuffle_Click);
+            // 
             // LibraryGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 472);
             this.Controls.Add(this.panel1);
@@ -165,5 +180,6 @@
         private System.Windows.Forms.Label labelImageIndex;
         private System.Windows.Forms.Button buttonZoomToFit;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonShuffle;
     }
 }
