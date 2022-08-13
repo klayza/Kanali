@@ -22,7 +22,6 @@ namespace Kanali
             {
                 this.initialized = true;
             }
-
         }
 
         // Writes over existing json, makes new instance

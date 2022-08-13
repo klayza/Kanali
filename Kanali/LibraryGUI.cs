@@ -6,33 +6,49 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kanali
 {
-    public partial class LibraryGUI : Form
+
+    /*  Flow ('favorite' button)
+     *   
+     *  1. Before displaying an image checks if an image is favorited
+     *  2. If already favorited, changes text of favorite button to 'Unfavorite'
+    */
+    public partial class LibraryGUI : Form 
     {
         String path;
         String[] Images;
+        String Favorites;
         int Images_Index = 0;
 
         public LibraryGUI()
         {
             InitializeComponent();
 
-            this.ActiveControl = labelImageIndex;
-
-            // Events for keypresses
-            labelImageIndex.KeyDown += LibraryGUI_KeyDown;
+            this.SetStyle(ControlStyles.Selectable, false);
+            this.ActiveControl = label1;
 
             User usr = new User();
             path = usr.getJson().download_path;
 
+            // Events for keypresses
+            label1.KeyDown += LibraryGUI_KeyDown;
+
             // Appends all files via recursion to Images array
             Images = getImages(path);
 
+            this.Favorites = getFavorites();
+
             // Sets first image to the picturebox
+            if (this.Favorites.Contains(Images[Images_Index]))
+            {
+                this.buttonFavorite.BackColor = Color.Red;
+            }
+            pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
             displayImageIndex();
         }
@@ -47,10 +63,17 @@ namespace Kanali
             {
                 buttonForwardImage.PerformClick();
             }
+            else if (e.KeyCode == Keys.F)
+            {
+                buttonFavorite.PerformClick();
+            }
+
         }
 
         private void buttonBackImage_Click(object sender, EventArgs e)
         {
+            label1.Focus();
+            this.buttonFavorite.BackColor = Color.White;
             if (Images_Index == 0)
             {
                 Images_Index = Images.Length - 1;
@@ -61,11 +84,17 @@ namespace Kanali
             }
             displayImageIndex();
             changeTitle(Images[Images_Index]);
+            if (this.Favorites.Contains(Images[Images_Index]))
+            {
+                this.buttonFavorite.BackColor = Color.Red;
+            }
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
         }
 
         private void buttonForwardImage_Click(object sender, EventArgs e)
         {
+            label1.Focus();
+            this.buttonFavorite.BackColor = Color.White;
             if (Images_Index == Images.Length - 1)
             {
                 Images_Index = 0;
@@ -76,11 +105,16 @@ namespace Kanali
             }
             displayImageIndex();
             changeTitle(Images[Images_Index]);
+            if (this.Favorites.Contains(Images[Images_Index]))
+            {
+                this.buttonFavorite.BackColor = Color.Red;
+            }
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
         }
 
         private void buttonFill_Click(object sender, EventArgs e)
         {
+            label1.Focus();
             if (pictureBoxImage.SizeMode == PictureBoxSizeMode.StretchImage)
             {
                 pictureBoxImage.SizeMode = PictureBoxSizeMode.Normal;
@@ -88,6 +122,7 @@ namespace Kanali
             }
             pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
+
         }
 
         // Displays the current index of image ex. 1 / 5
@@ -98,6 +133,7 @@ namespace Kanali
 
         private void buttonZoomToFit_Click(object sender, EventArgs e)
         {
+            label1.Focus();
             if (pictureBoxImage.SizeMode == PictureBoxSizeMode.Zoom)
             {
                 pictureBoxImage.SizeMode = PictureBoxSizeMode.Normal;
@@ -105,6 +141,7 @@ namespace Kanali
             }
             pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxImage.Image = new Bitmap(Images[Images_Index]);
+            
             
         }
 
@@ -144,8 +181,78 @@ namespace Kanali
 
         private void buttonShuffle_Click(object sender, EventArgs e)
         {
+            label1.Focus();
             var rnd = new Random();
             Images = Images.OrderBy(item => rnd.Next()).ToArray();
         }
+
+        private void buttonFavorite_Click(object sender, EventArgs e)
+        {
+            label1.Focus();
+            if (this.buttonFavorite.BackColor == Color.Red)
+            {
+                removeFavorite(Images[Images_Index]);
+                this.buttonFavorite.BackColor = Color.White;
+                return;
+            }
+            addFavorite(Images[Images_Index]);
+            this.buttonFavorite.BackColor = Color.Red;
+        }
+        private void addFavorite(string path)
+        {
+            string favs = getFavorites();
+            this.Favorites += "*" + path;
+            favs += "*" + path;
+            File.WriteAllText("Favorites.txt", favs);
+        }
+
+        private void removeFavorite(string path)
+        {
+            string favs = getFavorites();
+            if (favs.Contains(path))
+            {
+                favs = favs.Replace("*" + path, "");
+                File.WriteAllText("Favorites.txt", favs);
+                this.Favorites = favs;
+            }
+        }
+
+        private String getFavorites()
+        {
+            if (File.Exists("Favorites.txt"))
+            {
+                string str = File.ReadAllText("Favorites.txt");
+                return str;
+                
+            }
+            File.Create("Favorites.txt").Close();
+            return "";
+        }
+        
+        // IGNORE
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        // IGNORE
+        private void LibraryGUI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar.ToString().ToLower())
+            {
+                case "a":
+                    buttonBackImage.PerformClick();
+                    break;
+                case "f":
+                    buttonForwardImage.PerformClick();
+                    break;
+                case "e":
+                    buttonFavorite.PerformClick();
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
