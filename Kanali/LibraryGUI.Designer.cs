@@ -30,6 +30,7 @@
         {
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonFavorite = new System.Windows.Forms.Button();
             this.buttonShuffle = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonZoomToFit = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.buttonFill = new System.Windows.Forms.Button();
             this.buttonForwardImage = new System.Windows.Forms.Button();
             this.buttonBackImage = new System.Windows.Forms.Button();
-            this.buttonFavorite = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,6 +73,20 @@
             this.panel1.TabIndex = 1;
             this.panel1.TabStop = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // buttonFavorite
+            // 
+            this.buttonFavorite.AutoSize = true;
+            this.buttonFavorite.CausesValidation = false;
+            this.buttonFavorite.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFavorite.Location = new System.Drawing.Point(412, 5);
+            this.buttonFavorite.Name = "buttonFavorite";
+            this.buttonFavorite.Size = new System.Drawing.Size(34, 27);
+            this.buttonFavorite.TabIndex = 8;
+            this.buttonFavorite.TabStop = false;
+            this.buttonFavorite.Text = "❤";
+            this.buttonFavorite.UseVisualStyleBackColor = true;
+            this.buttonFavorite.Click += new System.EventHandler(this.buttonFavorite_Click);
             // 
             // buttonShuffle
             // 
@@ -119,7 +133,7 @@
             this.labelImageIndex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelImageIndex.AutoSize = true;
             this.labelImageIndex.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImageIndex.Location = new System.Drawing.Point(614, 10);
+            this.labelImageIndex.Location = new System.Drawing.Point(578, 9);
             this.labelImageIndex.Name = "labelImageIndex";
             this.labelImageIndex.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.labelImageIndex.Size = new System.Drawing.Size(78, 18);
@@ -165,20 +179,6 @@
             this.buttonBackImage.UseVisualStyleBackColor = true;
             this.buttonBackImage.Click += new System.EventHandler(this.buttonBackImage_Click);
             // 
-            // buttonFavorite
-            // 
-            this.buttonFavorite.AutoSize = true;
-            this.buttonFavorite.CausesValidation = false;
-            this.buttonFavorite.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFavorite.Location = new System.Drawing.Point(412, 5);
-            this.buttonFavorite.Name = "buttonFavorite";
-            this.buttonFavorite.Size = new System.Drawing.Size(34, 27);
-            this.buttonFavorite.TabIndex = 8;
-            this.buttonFavorite.TabStop = false;
-            this.buttonFavorite.Text = "❤";
-            this.buttonFavorite.UseVisualStyleBackColor = true;
-            this.buttonFavorite.Click += new System.EventHandler(this.buttonFavorite_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -197,8 +197,9 @@
             this.Controls.Add(this.pictureBoxImage);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimumSize = new System.Drawing.Size(825, 519);
             this.Name = "LibraryGUI";
-            this.Text = "LibraryGUI";
+            this.Text = "Library";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LibraryGUI_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.panel1.ResumeLayout(false);

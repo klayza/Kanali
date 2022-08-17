@@ -12,7 +12,6 @@ namespace Kanali
 {
     public partial class SettingsGUI : Form
     {
-        String path;
         public SettingsGUI()
         {
             InitializeComponent();
@@ -38,11 +37,15 @@ namespace Kanali
                 return;
             }
 
+            if (checkBoxMediaScrolling.CheckState.Equals(usr.media_scrolling) == false)
+            {
+                // refresh title screen
+            }
             // Retrieves the values from widgets then creates a new Preferences.json file with those values
             usr.download_path = textBoxDownloadDirectory.Text;
             usr.media_scrolling = checkBoxMediaScrolling.Checked;
             usr.createJson(usr);
-            this.Hide();
+            this.Close();
         }
 
         // Opens prompt for user to choose a directory then adds to text box

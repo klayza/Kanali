@@ -76,11 +76,13 @@ namespace Kanali
         {
             while (true)
             {
+                var rnd = new Random();
+                favs = favs.OrderBy(item => rnd.Next()).ToArray();
                 foreach (string fav in favs)
                 {
                     await Task.Delay(time);
                     Image img = new Bitmap(fav);
-                    this.BackgroundImage = img;
+                    this.pictureBoxBG.Image = img;
                 }
             }
         }
